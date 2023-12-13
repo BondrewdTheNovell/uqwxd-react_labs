@@ -3,6 +3,7 @@ const App = () => {
   const [todos, setTodos] = useState([]);
   const [todoEditing, setTodoEditing] = useState(null);
 
+  // Below is the code to load the todos from local storage
   useEffect(() => {
     const json = localStorage.getItem("todos");
     const loadedTodos = JSON.parse(json);
@@ -11,6 +12,7 @@ const App = () => {
     }
   }, []);
 
+  // Below is the code to save the todos to local storage
   useEffect(() => {
     if(todos.length > 0) {
         const json = JSON.stringify(todos);
